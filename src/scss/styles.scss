@@ -1,12 +1,110 @@
 @import "_variables";
 @import "_mixins";
 
-a {
-  margin-bottom: 10px;
-  &:nth-child(odd) {
-    @include link(blue);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $color_white;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    width: $left_size;
+    height: 100%;
+    padding-top: 5%;
+    padding-left: 3%;
+    padding-bottom: 4%;
+
+    h1 {
+      color: $color_red;
+      font-size: 80px;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin-bottom: 10%;
+      color: $color_red;
+      font-size: 30px;
+    }
+
+    p {
+      padding-right: 15%;
+      margin-bottom: 10%;
+      color: $color_red;
+      font-size: 20px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        margin-right: 10%;
+        color: $color_grey;
+        font-size: 15px;
+        text-decoration: underline;
+      }
+    }
   }
-  &:nth-child(even) {
-    @include link(red);
+
+  main {
+    margin-left: $left_size;
+    background-color: $color_red;
+
+    section {
+      padding-top: 10%;
+      padding-left: 8%;
+      padding-right: 8%;
+      padding-bottom: 10%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.08), transparent);
+
+      .movie_header {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        color: $color_white;
+
+        .movie_title {
+          font-size: 30px;
+          text-transform: uppercase;
+        }
+
+        .movie_director {
+          font-size: 20px;
+        }
+      }
+
+      img {
+        width: 100%;
+        box-shadow: 0 80px 80px -80px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .movie_footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        color: $color_white;
+
+        i {
+          margin-left: 20px;
+        }
+
+        .vote_up,
+        .vote_down {
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }
